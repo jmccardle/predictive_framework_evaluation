@@ -269,6 +269,46 @@ def main():
         critical=False
     )
 
+    # Phase 5: Robustness Tests
+    print("\n\n" + "="*70)
+    print("PHASE 5: ROBUSTNESS TESTS")
+    print("="*70)
+
+    runner.run_test(
+        'tests/5_robustness_tests/test_walk_forward_cv.py',
+        '5.1 Walk-Forward Cross-Validation',
+        critical=False
+    )
+
+    runner.run_test(
+        'tests/5_robustness_tests/test_parameter_sensitivity.py',
+        '5.2 Parameter Sensitivity',
+        critical=False
+    )
+
+    runner.run_test(
+        'tests/5_robustness_tests/test_multi_asset_consistency.py',
+        '5.3 Multi-Asset Consistency',
+        critical=False
+    )
+
+    runner.run_test(
+        'tests/5_robustness_tests/test_out_of_sample.py',
+        '5.4 Out-of-Sample Validation',
+        critical=False
+    )
+
+    # Phase 6: Statistical Rigor Tests
+    print("\n\n" + "="*70)
+    print("PHASE 6: STATISTICAL RIGOR TESTS")
+    print("="*70)
+
+    runner.run_test(
+        'tests/6_statistical_rigor_tests/test_multiple_hypothesis_correction.py',
+        '6.1 Multiple Hypothesis Correction',
+        critical=False
+    )
+
     # Final summary
     runner.print_summary()
 
